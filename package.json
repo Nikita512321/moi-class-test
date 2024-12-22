@@ -6,7 +6,10 @@
   "scripts": {
     "start:build": "rm -rf dist && npm run build && npm run start",
     "start": "node dist/server.js",
-    "build": "tsc"
+    "build": "tsc",
+    "create-migration": "cross-env ENV_PATH=../.env knex migrate:make -x cjs --esm --knexfile src/knexfile.ts",
+    "migrate": "cross-env ENV_PATH=../.env knex migrate:latest --esm --knexfile src/knexfile.ts",
+    "migrate-down": "cross-env ENV_PATH=../.env knex migrate:down --esm --knexfile src/knexfile.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"

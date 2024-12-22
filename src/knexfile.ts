@@ -1,3 +1,8 @@
+import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config({path: process.env.ENV_PATH })
+
 const knexConfig = {
   development: {
     client: process.env.DB_CLIENT,
@@ -8,11 +13,10 @@ const knexConfig = {
       database: process.env.DB_NAME,
     },
     migrations: {
-      directory: "./migrations",
+      directory: path.resolve("../db/migrations"),
+      tableName: "knex_migrations",
     },
-    seeds: {
-      directory: "./seeds",
-    },
+    useNullAsDefault: true,
   },
 };
 
