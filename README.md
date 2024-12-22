@@ -15,7 +15,7 @@ Before running the app, make sure you have the following installed:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://your-repository-url.git
+   git clone https://github.com/Nikita512321/moi-class-test.git
    cd moi-class-test
 2. Install dependencies
 
@@ -34,7 +34,12 @@ Before running the app, make sure you have the following installed:
    INCLUDE_STACKTRACE=false
    SERVER_PORT=3000
 
-5. Build and Start APP in One Command
+5. Run migration file
+
+   ```bash
+   npm run migrate
+
+6. Build and Start APP in One Command
 
    ```bash
    npm run start:build
