@@ -5,6 +5,7 @@ import { validateStatusMiddleware } from "../middlewares/validateStatus.js";
 import { validatePageMiddleware } from "../middlewares/validatePage.js";
 import { validateTeacherIdsMiddleware } from "../middlewares/validateTeacherIds.js";
 import { validateStudentsCountMiddleware } from "../middlewares/validateStudentsCount.js";
+import { validateLessonsPerPageMiddleware } from "../middlewares/validateLessonsPerPage.js";
 
 const router = Router();
 
@@ -14,6 +15,7 @@ router.get(
   validateStatusMiddleware,
   validatePageMiddleware,
   validateTeacherIdsMiddleware,
+  validateLessonsPerPageMiddleware,
   validateStudentsCountMiddleware,
   lessonsController.getLessonsByTeacnerIds
 );

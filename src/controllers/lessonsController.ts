@@ -2,7 +2,7 @@ import { NextFunction, Response } from "express";
 import catchAsync from "../utils/catchAsync.js";
 import lessonsDbServices from "../services/db/lessonsDbServices.js";
 
-export class ArchiveController {
+export class LessonsController {
   getLessonsByTeacnerIds = catchAsync(
     async (req: any, res: Response, next: NextFunction) => {
       const filters: any = req.query;
@@ -13,8 +13,6 @@ export class ArchiveController {
         filters.teacherIds = [];
       }
 
-      console.log(filters);
-
       const result = await lessonsDbServices.getLessonsByTeacherIds(req.query);
 
       res.status(200).json(result);
@@ -22,4 +20,4 @@ export class ArchiveController {
   );
 }
 
-export default new ArchiveController();
+export default new LessonsController();
