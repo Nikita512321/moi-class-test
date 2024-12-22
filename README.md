@@ -18,20 +18,23 @@ Before running the app, make sure you have the following installed:
    git clone https://your-repository-url.git
    cd moi-class-test
 2. Install dependencies
+
    ```bash
    npm install
 
-3. Set up the environment variables:
+3. In your .env file, add the following configuration:
+   
+   ```bash
+   DB_CLIENT=pg
+   DB_HOST=your-database-host
+   DB_USER=your-database-user
+   DB_PASS=your-database-password
+   DB_NAME=your-database-name
+   NODE_ENV=development
+   INCLUDE_STACKTRACE=false
+   SERVER_PORT=3000
 
-DB_CLIENT=pg
-DB_HOST=your-database-host
-DB_USER=your-database-user
-DB_PASS=your-database-password
-DB_NAME=your-database-name
-NODE_ENV=development
-INCLUDE_STACKTRACE=false
-SERVER_PORT=3000
+5. Build and Start APP in One Command
 
-4. Build and Start APP in One Command
    ```bash
    npm run start:build
