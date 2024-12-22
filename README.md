@@ -18,8 +18,8 @@ Before running the app, make sure you have the following installed:
    git clone https://your-repository-url.git
    cd moi-class-test
 2. Install dependencies
-
-npm install
+   ```bash
+   npm install
 
 3. Set up the environment variables:
 
@@ -33,5 +33,5 @@ INCLUDE_STACKTRACE=false
 SERVER_PORT=3000
 
 4. Build and Start APP in One Command
-
-npm run start:build
+   ```bash
+   npm run start:build
