@@ -1,12 +1,20 @@
-import apiError from "../../exceptions/apiError.js";
 import { DbServiceBase } from "./dbServiceBase/dbServiceBase.js";
+
+interface LessonFilters {
+  date?: string;
+  status?: string;
+  teacherIds?: number[];
+  studentsCount?: string;
+  page?: number;
+  lessonsPerPage?: number;
+}
 
 export class LessonsDbService extends DbServiceBase {
   constructor() {
     super();
   }
 
-  async getLessonsByTeacherIds(filters: any) {
+  async getLessonsByTeacherIds(filters: LessonFilters) {
     const {
       date,
       status,
